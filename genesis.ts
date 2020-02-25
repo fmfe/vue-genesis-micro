@@ -1,9 +1,9 @@
-import { ssrHeader } from './micro/ssr-header/genesis';
+import { ssrLeft } from './micro/ssr-left/genesis';
 import { ssrContent } from './micro/ssr-content/genesis';
-import { ssrFooter } from './micro/ssr-footer/genesis';
+import { ssrRight } from './micro/ssr-right/genesis';
 
 export const ssrList = [
+    ssrLeft,
     ssrContent,
-    ssrFooter,
-    ssrHeader
+    ssrRight
 ];
