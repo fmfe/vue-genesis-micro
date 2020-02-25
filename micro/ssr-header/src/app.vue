@@ -1,12 +1,6 @@
 <template>
     <div class="app">
-        <h2>Vue SSR for Genesis</h2>
-        <ol class="list">
-            <li class="list-item">页面标题：{{title}}</li>
-            <li class="list-item">服务名称：{{name}}</li>
-            <li class="list-item">渲染地址：{{url}}</li>
-            <li class="list-item">官网网站：<a rel="noopener noreferrer" target="_blank" href="https://www.followme.com/">www.followme.com</a></li>
-        </ol>
+        这个是页面头部
     </div>
 </template>
 <script lang="ts">

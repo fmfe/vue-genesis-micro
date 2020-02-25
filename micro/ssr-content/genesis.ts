@@ -1,3 +1,4 @@
+import path from 'path';
 import { Genesis } from '@fmfe/genesis-core';
 
 export const ssrContent = new Genesis({
@@ -5,5 +6,8 @@ export const ssrContent = new Genesis({
     server: {
         port: 3001,
         renderMode: 'ssr-json'
+    },
+    build: {
+        baseDir: path.resolve(__dirname)
     }
 });
