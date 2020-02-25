@@ -1,0 +1,55 @@
+{
+    "name": "vue-genesis-micro",
+    "version": "1.0.0",
+    "description": "这是一个基于 Vue SSR for Genesis 框架的微应用的例子",
+    "main": "index.js",
+    "scripts": {
+        "dev": "ts-node genesis.dev -p=tsconfig.json",
+        "build": "rm -rf dist && NODE_ENV=production ts-node genesis.build -p=tsconfig.json",
+        "start": "NODE_ENV=production ts-node genesis.prod -p=tsconfig.json",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "lint": "npm run lint:js && npm run lint:css",
+        "lint:js": "eslint . --ext .js,.ts,.vue --fix",
+        "lint:css": "stylelint . --syntax less --fix --ignore-path ./.stylelintignore | stylelint . --custom-syntax postcss-html --fix"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/fmfe/vue-genesis-micro.git"
+    },
+    "author": "Followme",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/fmfe/vue-genesis-micro/issues"
+    },
+    "homepage": "https://github.com/fmfe/vue-genesis-micro#readme",
+    "devDependencies": {
+        "@fmfe/genesis-lint": "^0.0.10",
+        "@fmfe/genesis-compiler": "^0.0.10",
+        "vue-property-decorator": "^8.4.0"
+    },
+    "dependencies": {
+        "@fmfe/genesis-core": "^0.0.10",
+        "ts-node": "^8.6.2",
+        "typescript": "^3.8.2"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{ts,js}": [
+            "eslint --ext .js,.ts --fix",
+            "git add"
+        ],
+        "*.{css,less}": [
+            "stylelint --syntax less --fix",
+            "git add"
+        ],
+        "*.{vue}": [
+            "eslint --ext .js,.ts --fix",
+            "stylelint --custom-syntax postcss-html --fix",
+            "git add"
+        ]
+    }
+}
