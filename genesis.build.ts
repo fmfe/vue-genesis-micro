@@ -1,7 +1,9 @@
 import { Build } from '@fmfe/genesis-compiler';
-import { ssr } from './genesis';
+import { ssrList } from './genesis';
 
 const start = () => {
-    return new Build(ssr).start();
+    return Promise.all(ssrList.map(ssr => {
+        return new Build(ssr).start();
+    }));
 };
 export default start();

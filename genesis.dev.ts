@@ -1,7 +1,11 @@
 import { DevServer } from '@fmfe/genesis-compiler';
-import { ssr } from './genesis';
+import { ssrList } from './genesis';
+import { PageServer } from './server';
 
-const start = () => {
-    return new DevServer(ssr).start();
+const start = async () => {
+    await Promise.all(ssrList.map(ssr => {
+        return new DevServer(ssr).start();
+    }));
+    new PageServer().start();
 };
 export default start();
