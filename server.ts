@@ -86,12 +86,13 @@ export class PageServer {
             return clientData;
         };
         this.app.get('*', async (req, res, next) => {
+            const scriptArr: string[] = [];
             const onSuccess = (data) => {
                 const htmlArr: string[] = [];
                 htmlArr.push(data.style);
                 htmlArr.push(data.html);
                 htmlArr.push(`<script ssr-name="${data.name}">window['${data.name}']=${JSON.stringify(createClientData(data))};</script>`);
-                htmlArr.push(data.script);
+                scriptArr.push(data.script);
                 res.write(htmlArr.join(''));
             };
             res.setHeader('content-type', 'text/html; charset=UTF-8');
@@ -100,6 +101,7 @@ export class PageServer {
                 request.get(`http://localhost:3001${req.url}`).then(onSuccess),
                 request.get(`http://localhost:3002${req.url}`).then(onSuccess)
             ]);
+            res.write(scriptArr.join(''));
             res.end();
         });
     }
