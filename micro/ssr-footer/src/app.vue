@@ -1,6 +1,6 @@
 <template>
     <div class="app">
-        <h2>ssr-footer</h2>
+        <h2>ssr-right</h2>
         右侧模块
     </div>
 </template>

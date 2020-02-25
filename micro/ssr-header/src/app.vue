@@ -1,6 +1,6 @@
 <template>
     <div class="app">
-        <h2 class="title">ssr-header</h2>
+        <h2 class="title">ssr-left</h2>
         <router-view />
     </div>
 </template>

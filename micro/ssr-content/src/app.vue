@@ -1,6 +1,6 @@
 <template>
     <div class="app">
-        <h2>ssr-content</h2>
+        <h2>ssr-center</h2>
         <p>
             <router-link :to="{name: 'home'}">首页</router-link>
             <router-link :to="{name: 'about'}">关于我们</router-link>
