@@ -30,17 +30,18 @@ export default class CommonHeader extends Vue {
 </script>
 <style lang="less" scoped>
 .list {
+    width: 100%;
     margin: 0;
     padding: 0 10px;
     overflow: hidden;
 }
 
 .list-item {
-    float: left;
-    padding: 0 20px;
+    padding: 10px 20px;
     list-style: none;
 
-    &.active a {
+    &.active a,
+    a:hover {
         color: #ff6200;
     }
 }
