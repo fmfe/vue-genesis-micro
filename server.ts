@@ -96,9 +96,13 @@ export class PageServer {
                 htmlArr.push(data.style);
                 htmlArr.push(data.html);
             });
+            htmlArr.push('<script>');
             arr.forEach(data => {
-                const scriptData = `<script name="${data.name}">window['${data.name}'] = ${JSON.stringify(createClientData(data))}</script>`;
+                const scriptData = `window['${data.name}']=${JSON.stringify(createClientData(data))};`;
                 htmlArr.push(scriptData);
+            });
+            htmlArr.push('</script>');
+            arr.forEach(data => {
                 htmlArr.push(data.script);
             });
             res.send(htmlArr.join(''));
