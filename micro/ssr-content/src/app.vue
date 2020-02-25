@@ -1,40 +1,28 @@
 <template>
     <div class="app">
-        这个是页面中间的内容
+        <h2>这个是 ssr-content 服务渲染的内容</h2>
+        <p>
+            <router-link :to="{name: 'home'}">首页</router-link>
+            <router-link :to="{name: 'about'}">关于我们</router-link>
+        </p>
+        <router-view />
     </div>
 </template>
 <script lang="ts">
 import Vue from 'vue';
-import { Component, Prop } from 'vue-property-decorator';
+import { Component } from 'vue-property-decorator';
 
 @Component<App>({})
 export default class App extends Vue {
-    @Prop({
-        type: String,
-        required: true
-    })
-    public name!: string;
-
-    @Prop({
-        type: String,
-        required: true
-    })
-    public title!: string;
-
-    @Prop({
-        type: String,
-        required: true
-    })
-    public url!: string;
 }
 </script>
 <style lang="less" scoped>
 .app {
-    width: 500px;
-    height: 100px;
     margin: 0 auto;
+    padding: 50px;
     color: #555;
     font-size: 15px;
+    border: 1px solid #ccc;
 
     /deep/ a {
         color: #b7754a;

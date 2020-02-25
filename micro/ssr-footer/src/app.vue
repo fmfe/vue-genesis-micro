@@ -5,27 +5,10 @@
 </template>
 <script lang="ts">
 import Vue from 'vue';
-import { Component, Prop } from 'vue-property-decorator';
+import { Component } from 'vue-property-decorator';
 
 @Component<App>({})
 export default class App extends Vue {
-    @Prop({
-        type: String,
-        required: true
-    })
-    public name!: string;
-
-    @Prop({
-        type: String,
-        required: true
-    })
-    public title!: string;
-
-    @Prop({
-        type: String,
-        required: true
-    })
-    public url!: string;
 }
 </script>
 <style lang="less" scoped>
