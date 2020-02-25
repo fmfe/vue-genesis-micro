@@ -1,6 +1,6 @@
 <template>
     <div class="app">
-        <h2>这个是 ssr-content 服务渲染的内容</h2>
+        <h2>ssr-content</h2>
         <p>
             <router-link :to="{name: 'home'}">首页</router-link>
             <router-link :to="{name: 'about'}">关于我们</router-link>
