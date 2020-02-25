@@ -8,6 +8,7 @@ export const ssrContent = new Genesis({
         renderMode: 'ssr-json'
     },
     build: {
-        baseDir: path.resolve(__dirname)
+        baseDir: path.resolve(__dirname),
+        includes: [path.resolve(__dirname, '../')]
     }
 });

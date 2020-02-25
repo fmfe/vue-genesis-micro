@@ -23,18 +23,18 @@
     },
     "homepage": "https://github.com/fmfe/vue-genesis-micro#readme",
     "devDependencies": {
-        "@fmfe/genesis-lint": "^0.0.10",
-        "@fmfe/genesis-compiler": "^0.0.10",
-        "vue-property-decorator": "^8.4.0"
+        "@fmfe/genesis-lint": "^0.0.11",
+        "@fmfe/genesis-compiler": "^0.0.11",
+        "vue-property-decorator": "^8.4.0",
+        "vue-router": "^3.1.5"
     },
     "dependencies": {
-        "@fmfe/genesis-core": "^0.0.10",
+        "@fmfe/genesis-core": "^0.0.11",
         "@types/express": "^4.17.2",
         "axios": "^0.19.2",
         "http-proxy": "^1.18.0",
         "ts-node": "^8.6.2",
-        "typescript": "^3.8.2",
-        "vue-router": "^3.1.5"
+        "typescript": "^3.8.2"
     },
     "husky": {
         "hooks": {

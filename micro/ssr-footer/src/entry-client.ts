@@ -1,11 +1,11 @@
 import App from './app.vue';
+import { createApp } from '../../genesis-micro/index';
 
-const data = window[process.env.GENESIS_NAME!];
+const start = async () => {
+    return createApp({
+        name: process.env.GENESIS_NAME!,
+        App
+    });
+};
 
-export default new App({
-    propsData: {
-        name: data.name,
-        title: data.title,
-        url: data.url
-    }
-});
+start();
