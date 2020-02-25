@@ -31,10 +31,13 @@ export default class CommonHeader extends Vue {
 <style lang="less" scoped>
 .list {
     margin: 0;
-    padding: 0;
+    padding: 0 10px;
+    overflow: hidden;
 }
 
 .list-item {
+    float: left;
+    padding: 0 20px;
     list-style: none;
 
     &.active a {

@@ -86,19 +86,21 @@ export class PageServer {
             return clientData;
         };
         this.app.get('*', async (req, res, next) => {
-            const arr = await Promise.all([
-                request.get(`http://localhost:3003${req.url}`),
-                request.get(`http://localhost:3001${req.url}`),
-                request.get(`http://localhost:3002${req.url}`)
-            ]);
-            const htmlArr: string[] = [];
-            arr.forEach(data => {
+            const onSuccess = (data) => {
+                const htmlArr: string[] = [];
                 htmlArr.push(data.style);
                 htmlArr.push(data.html);
                 htmlArr.push(`<script ssr-name="${data.name}">window['${data.name}']=${JSON.stringify(createClientData(data))};</script>`);
                 htmlArr.push(data.script);
-            });
-            res.send(htmlArr.join(''));
+                res.write(htmlArr.join(''));
+            };
+            res.setHeader('content-type', 'text/html; charset=UTF-8');
+            await Promise.all([
+                request.get(`http://localhost:3003${req.url}`).then(onSuccess),
+                request.get(`http://localhost:3001${req.url}`).then(onSuccess),
+                request.get(`http://localhost:3002${req.url}`).then(onSuccess)
+            ]);
+            res.end();
         });
     }
 
