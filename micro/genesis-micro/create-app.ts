@@ -1,12 +1,19 @@
 import Vue, { ComponentOptions } from 'vue';
+import { GenesisTypes } from '@fmfe/genesis-core';
+import { Micro } from './micro';
 
 export interface CreateAppOptions {
+    // 当前的服务名称
     name: string;
+    // 当前需要渲染的组件
     App: typeof Vue;
+    // 服务器端渲染的上下文
+    context?: GenesisTypes.RenderContext;
+    // vue 构建函数的参数
     vueOptions?: ComponentOptions<Vue>;
 }
 
-export const createApp = async (options: CreateAppOptions) => {
+const createAppClient = async (options: CreateAppOptions) => {
     if (typeof options !== 'object') {
         throw new Error('Option cannot be empty');
     }
@@ -34,9 +41,13 @@ export const createApp = async (options: CreateAppOptions) => {
     } else {
         el.removeAttribute('data-server-rendered');
     }
+    const micro = new Micro({
+        commits: data.commits
+    });
     const app = new App({
         el,
-        ...vueOptions
+        ...vueOptions,
+        micro
     });
     const routeChangeName = 'vue-route-changed';
     if (router) {
@@ -62,5 +73,33 @@ export const createApp = async (options: CreateAppOptions) => {
             await router.push(data.url);
         }
     }
+};
+
+const createAppServer = async (options: CreateAppOptions) => {
+    if (!options.context) {
+        throw new Error('options.context parameter cannot be empty');
+    }
+    const { App, context, vueOptions } = options;
+    const { router } = vueOptions || {};
+    if (router) {
+        await router.push(context.data.url);
+    }
+    const micro = new Micro();
+    context.data.commits = micro.createServerCommit();
+    const app = new App({
+        ...vueOptions,
+        micro
+    });
     return app;
+};
+
+Vue.use(Micro);
+export const createApp = async (options: CreateAppOptions) => {
+    if (!options.App) {
+        throw new Error('options.App component cannot be empty');
+    }
+    if (typeof window !== 'object') {
+        return createAppServer(options);
+    }
+    return createAppClient(options);
 };
