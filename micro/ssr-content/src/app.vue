@@ -2,8 +2,9 @@
     <div class="app">
         <h2>ssr-center</h2>
         <p>
-            <router-link :to="{name: 'home'}">首页</router-link>
-            <router-link :to="{name: 'about'}">关于我们</router-link>
+            <router-link
+                :to="{name: item.name}" v-for="item in list"
+                :key="item.name">{{item.title}}</router-link>
         </p>
         <router-view />
     </div>
@@ -12,8 +13,24 @@
 import Vue from 'vue';
 import { Component } from 'vue-property-decorator';
 
-@Component<App>({})
+@Component<App>({
+
+})
 export default class App extends Vue {
+    public serverPrefetch () {
+        this.$square.store.$push({
+            name: 'home',
+            title: '首页'
+        });
+        this.$square.store.$push({
+            name: 'about',
+            title: '关于我们'
+        });
+    }
+
+    public get list () {
+        return this.$square.store.list;
+    }
 }
 </script>
 <style lang="less">
