@@ -63,11 +63,10 @@ export const microRegister = {
             });
         }
         const micro = this.$options.micro;
-        if (micro) {
-            micro.reduceUse();
-            if (!micro.isUse) {
-                micro.destroy();
-            }
+        if (!micro) return;
+        micro.reduceUse();
+        if (!micro.isUse) {
+            micro.destroy();
         }
     }
 };
