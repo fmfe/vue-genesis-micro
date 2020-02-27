@@ -73,25 +73,13 @@ export class PageServer {
                 });
             });
         });
-        const blacklist = ['html', 'preload', 'resourceHints', 'script', 'style'];
-        const createClientData = (data: any) => {
-            const clientData = {
-                ...data
-            };
-            blacklist.forEach(key => {
-                Object.defineProperty(clientData, key, {
-                    enumerable: false
-                });
-            });
-            return clientData;
-        };
         this.app.get('*', async (req, res, next) => {
             const scriptArr: string[] = [];
             const onSuccess = (data) => {
                 const htmlArr: string[] = [];
                 htmlArr.push(data.style);
                 htmlArr.push(data.html);
-                htmlArr.push(`<script ssr-name="${data.name}">window['${data.name}']=${JSON.stringify(createClientData(data))};</script>`);
+                htmlArr.push(data.scriptState);
                 scriptArr.push(data.script);
                 res.write(htmlArr.join(''));
             };

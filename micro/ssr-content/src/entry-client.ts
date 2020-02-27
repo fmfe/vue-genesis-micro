@@ -1,18 +1,13 @@
 import App from './app.vue';
 import { Router } from './router';
-import { createApp } from '../../genesis-micro/index';
-import { Store } from './store';
+import { createApp } from '@fmfe/genesis-micro';
 
 const start = async () => {
+    const router = new Router();
     return createApp({
         name: process.env.GENESIS_NAME!,
         App,
-        vueOptions: {
-            router: new Router(),
-            microRegister: {
-                store: () => new Store()
-            }
-        }
+        vueOptions: { router }
     });
 };
 

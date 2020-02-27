@@ -1,5 +1,5 @@
 import App from './app.vue';
-import { createApp } from '../../genesis-micro/index';
+import { createApp } from '@fmfe/genesis-micro';
 
 const start = async () => {
     return createApp({

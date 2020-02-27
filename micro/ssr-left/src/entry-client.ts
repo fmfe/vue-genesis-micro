@@ -1,6 +1,6 @@
 import App from './app.vue';
 import { Router } from './router';
-import { createApp } from '../../genesis-micro/index';
+import { createApp } from '@fmfe/genesis-micro';
 
 const start = async () => {
     const router = new Router();
