@@ -3,8 +3,8 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
-const Home = () =>
-	import(/* webpackChunkName: "home" */ './views/home.vue');
+const BlogList = () =>
+	import(/* webpackChunkName: "home" */ './views/blog-list.vue');
 const About = () =>
 	import(/* webpackChunkName: "about" */ './views/about.vue');
 
@@ -15,8 +15,8 @@ export class Router extends VueRouter {
             routes: [
                 {
                     path: '/',
-                    name: 'home',
-                    component: Home
+                    name: 'blog-list',
+                    component: BlogList
                 },
                 {
                     path: '/about',

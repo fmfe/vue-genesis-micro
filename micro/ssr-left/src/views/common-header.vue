@@ -18,7 +18,7 @@ export interface Item {
 export default class CommonHeader extends Vue {
     public list: Item[] = [
         {
-            name: 'home',
+            name: 'blog-list',
             title: '首页'
         },
         {

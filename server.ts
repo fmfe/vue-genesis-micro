@@ -14,12 +14,10 @@ class Request {
         });
         const showLog = (axiosConfig: AxiosRequestConfig, isOk: boolean) => {
             if (process.env.VUE_ENV === 'server' && axiosConfig._startTime) {
-                // eslint-disable-next-line no-console
                 console.log(
                     `axios: ${axiosConfig.url} ${Date.now() - axiosConfig._startTime}ms ${
                         isOk ? '成功' : '失败'
-                    }`
-                );
+                    }`);
             }
         };
         request.interceptors.request.use(axiosConfig => {
@@ -86,8 +84,7 @@ export class PageServer {
             res.setHeader('content-type', 'text/html; charset=UTF-8');
             await Promise.all([
                 request.get(`http://localhost:3003${req.url}`).then(onSuccess),
-                request.get(`http://localhost:3001${req.url}`).then(onSuccess),
-                request.get(`http://localhost:3002${req.url}`).then(onSuccess)
+                request.get(`http://localhost:3001${req.url}`).then(onSuccess)
             ]);
             res.write(scriptArr.join(''));
             res.end();
