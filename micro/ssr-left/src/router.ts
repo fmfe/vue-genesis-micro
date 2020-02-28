@@ -1,13 +1,13 @@
 import Vue from 'vue';
-import VueRouter from 'vue-router';
+import { Micro, Router as VueRouter } from '@fmfe/genesis-micro';
 import CommonHeader from './views/common-header.vue';
 
-Vue.use(VueRouter);
+Vue.use(Micro);
 
 export class Router extends VueRouter {
     public constructor () {
         super({
-            mode: 'history',
+            mode: 'abstract',
             routes: [
                 {
                     path: '/',

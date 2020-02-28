@@ -1,8 +1,8 @@
 import path from 'path';
 import { Genesis } from '@fmfe/genesis-core';
 
-export const ssrRight = new Genesis({
-    name: 'ssr-footer',
+export const ssrDetail = new Genesis({
+    name: 'ssr-detail',
     server: {
         port: 3002,
         renderMode: 'ssr-json'
