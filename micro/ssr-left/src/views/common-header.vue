@@ -1,7 +1,7 @@
 <template>
     <ul class="list">
-        <li v-for="item in list" :key="item.name" :class="{active: item.name === $route.name}" class="list-item">
-            <router-link :to="{name: item.name}">{{item.title}}</router-link>
+        <li v-for="item in list" :key="item.path" :class="{active: item.path === $route.path}" class="list-item">
+            <router-link :to="{path: item.path}">{{item.title}}</router-link>
         </li>
     </ul>
 </template>
@@ -10,7 +10,7 @@ import Vue from 'vue';
 import { Component } from 'vue-property-decorator';
 
 export interface Item {
-    name: string;
+    path: string;
     title: string;
 }
 
@@ -18,11 +18,11 @@ export interface Item {
 export default class CommonHeader extends Vue {
     public list: Item[] = [
         {
-            name: 'blog-list',
+            path: '/',
             title: '首页'
         },
         {
-            name: 'about',
+            path: '/about',
             title: '关于我们'
         }
     ];

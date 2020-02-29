@@ -4,7 +4,7 @@
             <li v-for="item in list"
                 :key="item.id"
                 class="list-item">
-                <router-link :to="{name: 'about'}">{{item.title}}</router-link>
+                <router-link :to="{path: `/blog/${item.id}`}">{{item.title}}</router-link>
             </li>
         </ul>
     </div>

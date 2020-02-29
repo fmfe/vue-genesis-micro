@@ -25,30 +25,23 @@ export class Request {
         request.interceptors.response.use(
             axiosConfig => {
                 showLog(axiosConfig.config, true);
-                if (typeof axiosConfig.data !== 'object') {
-                    axiosConfig.data = {
-                        code: -10000,
-                        data: axiosConfig.data,
-                        message: 'Request error'
-                    };
-                    return axiosConfig;
-                }
                 return axiosConfig;
             },
             err => {
-                err.data = {
-                    code: -10001,
-                    data: '',
-                    message: 'Request failure'
-                };
+                err.data = null;
                 showLog(err.config, false);
                 return Promise.resolve(err);
             }
         );
     }
 
-    public get (url: string, config: AxiosRequestConfig) {
-        return this.request.get(url, config).then(res => res.data);
+    public get <T> (url: string, config: AxiosRequestConfig): Promise<{ status: number; data: T }> {
+        return this.request.get(url, config).then(res => {
+            return {
+                status: res.status,
+                data: res.data
+            };
+        });
     }
 }
 
@@ -58,7 +51,7 @@ export class BaseRequest {
         this.request = config.request;
     }
 
-    public get (url: string, config: AxiosRequestConfig = {}) {
-        return this.request.get(url, config);
+    public get <T> (url: string, config: AxiosRequestConfig = {}) {
+        return this.request.get<T>(url, config);
     }
 }

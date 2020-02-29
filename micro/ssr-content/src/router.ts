@@ -12,12 +12,10 @@ export class Router extends VueRouter {
             routes: [
                 {
                     path: '/',
-                    name: 'blog-list',
                     component: BlogList
                 },
                 {
                     path: '/about',
-                    name: 'about',
                     component: About
                 }
             ]
