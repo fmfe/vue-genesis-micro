@@ -1,11 +1,12 @@
 import App from './app.vue';
-import { createApp } from '@fmfe/genesis-micro';
+import { createClientApp } from '@fmfe/genesis-micro';
 
-const start = async () => {
-    return createApp({
-        name: process.env.GENESIS_NAME!,
+const start = async ({ el, data }) => {
+    return createClientApp({
+        el,
+        data,
         App
     });
 };
 
-start();
+export default start;

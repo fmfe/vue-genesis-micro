@@ -1,14 +1,15 @@
 import App from './app.vue';
 import { Router } from './router';
-import { createApp } from '@fmfe/genesis-micro';
+import { createClientApp } from '@fmfe/genesis-micro';
 
-const start = async () => {
+const start = async ({ el, data }) => {
     const router = new Router();
-    return createApp({
-        name: process.env.GENESIS_NAME!,
+    return createClientApp({
+        el,
+        data,
         App,
         vueOptions: { router }
     });
 };
 
-start();
+export default start;
