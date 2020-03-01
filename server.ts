@@ -77,7 +77,7 @@ export class PageServer {
                 const htmlArr: string[] = [];
                 htmlArr.push(data.style);
                 htmlArr.push(data.html);
-                htmlArr.push(data.scriptState);
+                scriptArr.push(data.scriptState);
                 scriptArr.push(data.script);
                 res.write(htmlArr.join(''));
             };
