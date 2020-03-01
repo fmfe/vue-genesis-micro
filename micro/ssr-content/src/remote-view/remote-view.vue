@@ -14,7 +14,7 @@ import { Store } from './store';
 export default class RemoteView extends Vue {
     public url = 'http://localhost:3002';
     public async serverPrefetch () {
-        return this.store.getView(this.url);
+        return this.getHtml();
     }
 
     public get store () {
@@ -23,6 +23,10 @@ export default class RemoteView extends Vue {
 
     public get html () {
         return this.store.html;
+    }
+
+    public getHtml () {
+        return this.store.getView(this.url);
     }
 }
 </script>
