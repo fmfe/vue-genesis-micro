@@ -36,8 +36,8 @@ export class Store extends Tms {
     public async getView (url: string): Promise<string> {
         const res = await axios.get(url);
         if (res.status !== 200) return '';
-        const html = res.data.style + res.data.html;
-        this.$success(Base64.encode(JSON.stringify(res.data)));
+        const html = res.data.style + res.data.html + res.data.script;
+        this.$success(res.data);
         this.$html(html);
 
         return html;

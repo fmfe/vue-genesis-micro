@@ -4,7 +4,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import { Component } from 'vue-property-decorator';
-import { Store, Base64 } from './store';
+import { Store } from './store';
 
 @Component<RemoteView>({
     microRegister: {
@@ -34,20 +34,20 @@ export default class RemoteView extends Vue {
         if (!this.store.data) {
             return;
         }
-        const data = JSON.parse(Base64.decode(this.store.data));
+        const data = this.store.data;
         const el = this.$el.querySelector(`[data-ssr-genesis-id="${data.id}"]`);
         if (!el) return;
-        await Promise.all(
-            data.preload.map(item => {
-                return new Promise((resolve) => {
-                    const script = document.createElement('script');
-                    script.src = item.file;
-                    document.body.appendChild(script);
-                    script.onload = resolve;
-                    script.onerror = resolve;
-                });
-            })
-        );
+        // await Promise.all(
+        //     data.preload.map(item => {
+        //         return new Promise((resolve) => {
+        //             const script = document.createElement('script');
+        //             script.src = item.file;
+        //             document.body.appendChild(script);
+        //             script.onload = resolve;
+        //             script.onerror = resolve;
+        //         });
+        //     })
+        // );
         this.vm = (window as any).genesis.install(data.name, {
             el,
             data: {

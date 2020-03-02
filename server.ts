@@ -1,6 +1,7 @@
 import express from 'express';
 import httpProxy from 'http-proxy';
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
+import { StreamRender, GenesisTypes } from '@fmfe/genesis-core';
 import { ssrList } from './genesis';
 
 const proxy = httpProxy.createProxyServer({});
@@ -72,21 +73,20 @@ export class PageServer {
             });
         });
         this.app.get('*', async (req, res, next) => {
-            const scriptArr: string[] = [];
-            const onSuccess = (data) => {
-                const htmlArr: string[] = [];
-                htmlArr.push(data.style);
-                htmlArr.push(data.html);
-                scriptArr.push(data.scriptState);
-                scriptArr.push(data.script);
-                res.write(htmlArr.join(''));
+            const stream = new StreamRender();
+            const dataArr: GenesisTypes.RenderData[] = [];
+            const onSuccess = (data: GenesisTypes.RenderData) => {
+                dataArr.push(data);
+                res.write(stream.renderStyle(data) + stream.renderHtml(data));
             };
             res.setHeader('content-type', 'text/html; charset=UTF-8');
             await Promise.all([
                 request.get(`http://localhost:3003${req.url}`).then(onSuccess),
                 request.get(`http://localhost:3001${req.url}`).then(onSuccess)
             ]);
-            res.write(scriptArr.join(''));
+            dataArr.forEach(data => {
+                res.write(stream.renderScript(data));
+            });
             res.end();
         });
     }
