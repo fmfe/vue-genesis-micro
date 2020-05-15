@@ -1,12 +1,15 @@
 import { RenderContext } from '@fmfe/genesis-core';
+import { createServerApp } from '@fmfe/genesis-app';
+import { createRouter } from './router';
 import Vue from 'vue';
 import App from './app.vue';
 
 export default async (renderContext: RenderContext): Promise<Vue> => {
-    return new Vue({
+    return createServerApp({
+        App,
         renderContext,
-        render(h) {
-            return h(App);
+        vueOptions: {
+            router: createRouter()
         }
-    });
+    })
 };

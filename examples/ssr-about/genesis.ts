@@ -14,7 +14,7 @@ export const ssr = new SSR({
     /**
      * 设置应用名称，不能重复
      */
-    name: 'ssr-common',
+    name: 'ssr-about',
     /**
      * 设置编译的配置
      */
@@ -37,5 +37,5 @@ export const startApp = (renderer: Renderer) => {
     /**
      * 监听端口
      */
-    app.listen(3000, () => console.log(`http://localhost:3000`));
+    app.listen(3002, () => console.log(`http://localhost:3000`));
 };

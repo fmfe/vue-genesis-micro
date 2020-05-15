@@ -1,12 +1,15 @@
 import { ClientOptions } from '@fmfe/genesis-core';
+import { createClientApp } from '@fmfe/genesis-app';
+import { createRouter } from './router';
 import Vue from 'vue';
 import App from './app.vue';
 
 export default async (clientOptions: ClientOptions): Promise<Vue> => {
-    return new Vue({
+    return createClientApp({
+        App,
         clientOptions,
-        render(h) {
-            return h(App);
+        vueOptions: {
+            router: createRouter()
         }
-    });
+    })
 };
