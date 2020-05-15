@@ -11,5 +11,5 @@ export default async (clientOptions: ClientOptions): Promise<Vue> => {
         vueOptions: {
             router: createRouter(clientOptions.state)
         }
-    })
+    });
 };

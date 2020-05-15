@@ -11,5 +11,5 @@ export default async (renderContext: RenderContext): Promise<Vue> => {
         vueOptions: {
             router: createRouter(renderContext.data.state)
         }
-    })
+    });
 };

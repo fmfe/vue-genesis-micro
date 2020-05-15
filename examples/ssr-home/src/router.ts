@@ -1,4 +1,4 @@
-import {RouterMode } from 'vue-router';
+import { RouterMode } from 'vue-router';
 import { Router } from '@fmfe/genesis-app';
 
 interface State {
@@ -11,8 +11,11 @@ export const createRouter = (state: State) => {
         routes: [
             {
                 path: '/',
-                component: () => import( /* webpackChunkName: "home" */ './views/home.vue').then(m => m.default)
+                component: () =>
+                    import(
+                        /* webpackChunkName: "home" */ './views/home.vue'
+                    ).then((m) => m.default)
             }
         ]
-    })
-}
+    });
+};

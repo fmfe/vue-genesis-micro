@@ -20,5 +20,5 @@ export const createRouter = () => {
                 component: Container
             }
         ]
-    })
-}
+    });
+};

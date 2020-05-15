@@ -35,8 +35,8 @@ export default Vue.extend({
     text-align: center;
 }
 ul {
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 li {
     list-style: none;

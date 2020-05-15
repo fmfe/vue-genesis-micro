@@ -3,7 +3,6 @@ import path from 'path';
 import httpProxy from 'http-proxy';
 import { SSR, Renderer } from '@fmfe/genesis-core';
 
-
 /**
  * 创建一个应用程序
  */
