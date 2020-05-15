@@ -33,6 +33,9 @@ export const ssr = new SSR({
 export const startApp = (renderer: Renderer) => {
     const proxy = httpProxy.createProxyServer({});
     /**
+     * 注意：这里是为了演示，所以在聚合服务上代理了其它服务的请求，在生产环境中，你可能会使用 Nginx 进行反向代理。
+     */
+    /**
      * ssr-home 服务静态文件代理
      */
     app.use('/ssr-home/', (req, res, next) => {
