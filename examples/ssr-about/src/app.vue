@@ -32,8 +32,14 @@ export default Vue.extend({
 </script>
 <style lang="less" scoped>
 .app {
-    padding: 100px;
     text-align: center;
+}
+ul {
+    padding: 0;
+    margin: 0;
+}
+li {
+    list-style: none;
 }
 .text {
     color: #999;
