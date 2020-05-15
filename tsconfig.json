@@ -3,11 +3,6 @@
         "target": "esnext",
         "module": "esnext",
         "moduleResolution": "node",
-        "lib": [
-            "esnext",
-            "esnext.asynciterable",
-            "dom"
-        ],
         "esModuleInterop": true,
         "experimentalDecorators": true,
         "allowJs": true,
@@ -24,7 +19,8 @@
         ],
         "types": [
             "@types/node"
-        ]
+        ],
+        "allowSyntheticDefaultImports": true
     },
     "ts-node": {
         "compilerOptions": {

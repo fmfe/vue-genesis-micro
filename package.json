@@ -1,61 +1,24 @@
 {
-    "name": "vue-genesis-micro",
-    "version": "1.0.0",
-    "description": "这是一个基于 Vue SSR for Genesis 框架的微应用的例子",
-    "main": "index.js",
-    "scripts": {
-        "dev": "ts-node genesis.dev -p=tsconfig.json",
-        "build": "rm -rf dist && NODE_ENV=production ts-node genesis.build -p=tsconfig.json",
-        "start": "NODE_ENV=production ts-node genesis.prod -p=tsconfig.json",
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "lint": "npm run lint:js && npm run lint:css",
-        "lint:js": "eslint . --ext .js,.ts,.vue --fix",
-        "lint:css": "stylelint . --syntax less --fix --ignore-path ./.stylelintignore | stylelint . --custom-syntax postcss-html --fix"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/fmfe/vue-genesis-micro.git"
-    },
-    "author": "Followme",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/fmfe/vue-genesis-micro/issues"
-    },
-    "homepage": "https://github.com/fmfe/vue-genesis-micro#readme",
-    "devDependencies": {
-        "@fmfe/genesis-lint": "^0.0.23",
-        "@fmfe/genesis-compiler": "^0.0.23",
-        "vue-property-decorator": "^8.4.0",
-        "vue-router": "^3.1.5"
-    },
-    "dependencies": {
-        "@fmfe/genesis-core": "^0.0.23",
-        "@fmfe/genesis-micro": "^0.0.23",
-        "@fmfe/tms.js": "^0.1.7",
-        "@types/express": "^4.17.2",
-        "axios": "^0.19.2",
-        "http-proxy": "^1.18.0",
-        "ts-node": "^8.6.2",
-        "typescript": "^3.8.2"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
-    },
-    "lint-staged": {
-        "*.{ts,js}": [
-            "eslint --ext .js,.ts --fix",
-            "git add"
-        ],
-        "*.{css,less}": [
-            "stylelint --syntax less --fix",
-            "git add"
-        ],
-        "*.{vue}": [
-            "eslint --ext .js,.ts --fix",
-            "stylelint --custom-syntax postcss-html --fix",
-            "git add"
-        ]
-    }
+  "name": "vue-genesis-micro",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:fmfe/vue-genesis-micro.git",
+  "author": "followme",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node genesis.dev -p=tsconfig.json",
+    "build": "rm -rf dist && NODE_ENV=production ts-node genesis.build -p=tsconfig.json",
+    "start": "NODE_ENV=production ts-node genesis.prod -p=tsconfig.json"
+  },
+  "dependencies": {
+    "@fmfe/genesis-core": "^0.0.56-alpha.0",
+    "@types/express": "^4.17.6",
+    "@types/node": "^14.0.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@fmfe/genesis-app": "^0.0.56-alpha.0",
+    "@fmfe/genesis-compiler": "^0.0.56-alpha.0",
+    "@fmfe/genesis-remote": "^0.0.56-alpha.0"
+  }
 }
