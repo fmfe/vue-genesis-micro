@@ -9,7 +9,7 @@ export default async (clientOptions: ClientOptions): Promise<Vue> => {
         App,
         clientOptions,
         vueOptions: {
-            router: createRouter()
+            router: createRouter(clientOptions.state)
         }
     })
 };

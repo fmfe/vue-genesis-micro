@@ -1,9 +1,12 @@
 <template>
     <div class="app">
-        <h2>你好世界！</h2>
-        <p v-if="show" @click="close" class="text">
-            {{ installed ? '在客户端应该安装成功，点击我关闭!' : '未安装' }}
-        </p>
+        <ul>
+            <li>
+                <router-link to="/">首页</router-link>
+                <router-link to="/?tab=new">最新</router-link>
+            </li>
+        </ul>
+        <router-view></router-view>
     </div>
 </template>
 <script lang="ts">

@@ -9,7 +9,7 @@ export default async (renderContext: RenderContext): Promise<Vue> => {
         App,
         renderContext,
         vueOptions: {
-            router: createRouter()
+            router: createRouter(renderContext.data.state)
         }
     })
 };
