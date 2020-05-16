@@ -42,7 +42,7 @@ export const startApp = (renderer: Renderer) => {
             ['abstract', 'history'].indexOf(String(req.query.routerMode)) > -1
                 ? req.query.routerMode
                 : 'history';
-        // 渲染的类型， html 或者 json
+        // 渲染默认
         const mode: any =
             renderModes.indexOf(String(req.query.renderMode)) > -1
                 ? String(req.query.renderMode)
