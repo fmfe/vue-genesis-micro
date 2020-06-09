@@ -833,17 +833,15 @@
   resolved "https://registry.npm.taobao.org/@csstools/convert-colors/download/@csstools/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha1-rUldxBsS511YjG24uYNPCPoTHrc=
 
-"@fmfe/genesis-app@^0.0.56-alpha.0":
-  version "0.0.56-alpha.0"
-  resolved "https://registry.npm.taobao.org/@fmfe/genesis-app/download/@fmfe/genesis-app-0.0.56-alpha.0.tgz#8dbf6562eca29402f288079d9994ded020a2e9ab"
-  integrity sha1-jb9lYuyilALyiAedmZTe0CCi6as=
-  dependencies:
-    vue-router "^3.1.6"
+"@fmfe/genesis-app@^0.0.60-alpha.0":
+  version "0.0.60-alpha.0"
+  resolved "http://npm.followme.com/@fmfe%2fgenesis-app/-/genesis-app-0.0.60-alpha.0.tgz#dd92bef28259d41f496b67d05fe4fce47b9d60e5"
+  integrity sha1-3ZK+8oJZ1B9Ja2fQX+T85HudYOU=
 
-"@fmfe/genesis-compiler@^0.0.56-alpha.0":
-  version "0.0.56-alpha.0"
-  resolved "https://registry.npm.taobao.org/@fmfe/genesis-compiler/download/@fmfe/genesis-compiler-0.0.56-alpha.0.tgz#bc3951c9d63cdfc8aac10a4a1d8c70101c721131"
-  integrity sha1-vDlRydY838iqwQpKHYxwEBxyETE=
+"@fmfe/genesis-compiler@^0.0.60-alpha.0":
+  version "0.0.60-alpha.0"
+  resolved "http://npm.followme.com/@fmfe%2fgenesis-compiler/-/genesis-compiler-0.0.60-alpha.0.tgz#a016d61e24d1798ce351a8ad57d8cf9a9fa635a8"
+  integrity sha1-oBbWHiTReYzjUaitV9jPmp+mNag=
   dependencies:
     "@babel/core" "^7.8.4"
     "@babel/plugin-proposal-class-properties" "^7.8.3"
@@ -870,6 +868,7 @@
     style-loader "^1.1.3"
     thread-loader "^2.1.3"
     typescript "^3.8.3"
+    upath "^1.2.0"
     vue-loader "^15.9.0"
     vue-server-renderer "^2.6.11"
     vue-style-loader "^4.1.2"
@@ -882,20 +881,20 @@
     webpackbar "^4.0.0"
     write "^2.0.0"
 
-"@fmfe/genesis-core@^0.0.56-alpha.0":
-  version "0.0.56-alpha.0"
-  resolved "https://registry.npm.taobao.org/@fmfe/genesis-core/download/@fmfe/genesis-core-0.0.56-alpha.0.tgz#9500aeeb41f1760dcbf284508d22af1edae56328"
-  integrity sha1-lQCu60Hxdg3L8oRQjSKvHtrlYyg=
+"@fmfe/genesis-core@^0.0.60-alpha.0":
+  version "0.0.60-alpha.0"
+  resolved "http://npm.followme.com/@fmfe%2fgenesis-core/-/genesis-core-0.0.60-alpha.0.tgz#f4fba03b9eca2666f430361d86e0dad58bff59b1"
+  integrity sha1-9PugO57KJmb0MDYdhuDa1Yv/WbE=
   dependencies:
     ejs "^3.0.1"
     serialize-javascript "^3.0.0"
     vue "^2.6.11"
     vue-server-renderer "^2.6.11"
 
-"@fmfe/genesis-lint@^0.0.56-alpha.0":
-  version "0.0.56-alpha.0"
-  resolved "https://registry.npm.taobao.org/@fmfe/genesis-lint/download/@fmfe/genesis-lint-0.0.56-alpha.0.tgz#21dc8f597772d4e35dee4257cc76b93dc1c4fda5"
-  integrity sha1-IdyPWXdy1ONd7kJXzHa5PcHE/aU=
+"@fmfe/genesis-lint@^0.0.60-alpha.0":
+  version "0.0.60-alpha.0"
+  resolved "http://npm.followme.com/@fmfe%2fgenesis-lint/-/genesis-lint-0.0.60-alpha.0.tgz#fe28fe1d4c50d2ff4b76030894401b98bc1e2260"
+  integrity sha1-/ij+HUxQ0v9LdgMIlEAbmLweImA=
   dependencies:
     "@typescript-eslint/eslint-plugin" "^2.20.0"
     "@typescript-eslint/parser" "^2.20.0"
@@ -922,10 +921,10 @@
     typescript "^3.8.2"
     vue-eslint-parser "5.0.0"
 
-"@fmfe/genesis-remote@^0.0.56-alpha.0":
-  version "0.0.56-alpha.0"
-  resolved "https://registry.npm.taobao.org/@fmfe/genesis-remote/download/@fmfe/genesis-remote-0.0.56-alpha.0.tgz#e227007feaa7e733c238e8aab17340728efbffaf"
-  integrity sha1-4icAf+qn5zPCOOiqsXNAco77/68=
+"@fmfe/genesis-remote@^0.0.60-alpha.0":
+  version "0.0.60-alpha.0"
+  resolved "http://npm.followme.com/@fmfe%2fgenesis-remote/-/genesis-remote-0.0.60-alpha.0.tgz#9e2c01306ca70160455b6b27bc9673adde2b72f4"
+  integrity sha1-niwBMGynAWBFW2snvJZzrd4rcvQ=
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
@@ -8492,7 +8491,7 @@ unset-value@^1.0.0:
     has-value "^0.3.1"
     isobject "^3.0.0"
 
-upath@^1.1.1:
+upath@^1.1.1, upath@^1.2.0:
   version "1.2.0"
   resolved "https://registry.npm.taobao.org/upath/download/upath-1.2.0.tgz#8f66dbcd55a883acdae4408af8b035a5044c1894"
   integrity sha1-j2bbzVWog6za5ECK+LA1pQRMGJQ=
@@ -8685,10 +8684,10 @@ vue-loader@^15.9.0:
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
-vue-router@^3.1.6:
-  version "3.1.6"
-  resolved "https://registry.npm.taobao.org/vue-router/download/vue-router-3.1.6.tgz#45f5a3a3843e31702c061dd829393554e4328f89"
-  integrity sha1-RfWjo4Q+MXAsBh3YKTk1VOQyj4k=
+vue-router@^3.3.2:
+  version "3.3.2"
+  resolved "https://registry.npm.taobao.org/vue-router/download/vue-router-3.3.2.tgz?cache=0&sync_timestamp=1590759571191&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-router%2Fdownload%2Fvue-router-3.3.2.tgz#0099de402edb2fe92f9711053ab5a2156f239cad"
+  integrity sha1-AJneQC7bL+kvlxEFOrWiFW8jnK0=
 
 vue-server-renderer@^2.6.11:
   version "2.6.11"
