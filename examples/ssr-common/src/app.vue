@@ -1,7 +1,7 @@
 <template>
     <div class="app">
         <div class="left">
-            <h2>ssr-common</h2>
+            <h2 class="title">ssr-common</h2>
             <ul class="list">
                 <li class="list-item">
                     <router-link to="/">首页</router-link>
@@ -50,6 +50,9 @@ body {
 }
 </style>
 <style lang="less" scoped>
+.title {
+    text-align: center;
+}
 .app {
     position: relative;
     box-sizing: border-box;
