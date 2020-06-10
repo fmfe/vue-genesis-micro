@@ -244,5 +244,5 @@ export default Vue.extend<Data, Methods, Computed>({
 - [Genesis](https://github.com/fmfe/genesis)官方仓库
 - [Genesis](https://fmfe.github.io/genesis-docs/)文档地址
 - [基于 Vue SSR 的微架构在 FOLLOWME5.0 实践](https://fmfe.github.io/genesis-docs/blog/followme5.0.html)
-- [基于 Vue CSR 的微前端实现方案](https://fmfe.github.io/genesis-docs/blog/2020-05-25.html)
+- [基于 Vue CSR 的微前端实现方案](https://fmfe.github.io/genesis-docs/blog/2020-05-25.html)    
 如果你对微前端、和微服务这一块感兴趣，欢迎 Star ，也可以在留言区我和互动！
