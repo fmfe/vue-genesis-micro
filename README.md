@@ -2,6 +2,8 @@
 ```bash
 # 拉取代码
 git clone git@github.com:fmfe/vue-genesis-micro.git
+# 进入项目目录
+cd vue-genesis-micro
 # 安装依赖
 npm install
 # 开发环境启动
