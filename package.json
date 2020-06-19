@@ -20,6 +20,7 @@
         "axios": "^0.19.2",
         "express": "^4.17.1",
         "http-proxy": "^1.18.0",
+        "ts-node": "^8.10.2",
         "vue-router": "^3.3.2"
     },
     "devDependencies": {
