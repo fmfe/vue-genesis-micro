@@ -31,12 +31,6 @@ export default Vue.extend<any, Methods, Computed>({
             return this.$route.meta.ssrname;
         }
     },
-    watch: {
-        ssrname() {
-            if (this.names.indexOf(this.ssrname) > -1) return;
-            this.names.push(this.ssrname);
-        }
-    },
     methods: {
         /**
          * 客户端远程调用时，走 CSR 渲染

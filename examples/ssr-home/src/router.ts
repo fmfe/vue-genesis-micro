@@ -8,6 +8,7 @@ interface State {
 export const createRouter = (state: State) => {
     return new Router({
         mode: state?.routerMode || 'history',
+        base: '/test/',
         routes: [
             {
                 path: '/',
