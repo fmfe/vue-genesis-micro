@@ -82,12 +82,11 @@ app.use('/api/render', (req, res, next) => {
 <template>
     <div>
         <remote-view
-            v-for="name in names"
-            v-show="ssrname === name"
-            :key="name"
-            :clientFetch="() => clientFetch(name)"
-            :serverFetch="() => serverFetch(name)"
-        ></remote-view>
+            v-if="ssrname"
+            :key="ssrname"
+            :clientFetch="() => clientFetch(ssrname)"
+            :serverFetch="() => serverFetch(ssrname)"
+        />
     </div>
 </template>
 <script lang="ts">
@@ -95,9 +94,6 @@ import Vue from 'vue';
 import { RemoteView } from '@fmfe/genesis-remote';
 import axios from 'axios';
 
-interface Data {
-    names: string[];
-}
 interface Methods {
     clientFetch: (ssrname: string) => Promise<void>;
     serverFetch: (ssrname: string) => Promise<void>;
@@ -106,29 +102,15 @@ interface Computed {
     ssrname: string;
 }
 
-export default Vue.extend<Data, Methods, Computed>({
+export default Vue.extend<any, Methods, Computed>({
     name: 'container',
     components: {
         RemoteView
-    },
-    data() {
-        return {
-            names: []
-        };
     },
     computed: {
         ssrname() {
             return this.$route.meta.ssrname;
         }
-    },
-    watch: {
-        ssrname() {
-            if (this.names.indexOf(this.ssrname) > -1) return;
-            this.names.push(this.ssrname);
-        }
-    },
-    created() {
-        this.names.push(this.ssrname);
     },
     methods: {
         /**
