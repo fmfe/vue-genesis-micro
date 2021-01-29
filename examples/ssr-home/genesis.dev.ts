@@ -1,5 +1,8 @@
 import { Watch } from '@fmfe/genesis-compiler';
 import { ssr, app, startApp } from './genesis';
+import { CommonPlugin } from '../common-plugin';
+
+ssr.plugin.use(CommonPlugin);
 
 const start = async () => {
     /**

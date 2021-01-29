@@ -27,7 +27,8 @@
         "@fmfe/genesis-app": "0.0.93",
         "@fmfe/genesis-compiler": "0.0.93",
         "@fmfe/genesis-lint": "0.0.93",
-        "@fmfe/genesis-remote": "0.0.93"
+        "@fmfe/genesis-remote": "0.0.93",
+        "webpack-dynamic-import-cdn-plugin": "^0.1.0"
     },
     "husky": {
         "hooks": {

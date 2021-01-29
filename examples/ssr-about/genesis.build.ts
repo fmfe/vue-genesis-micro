@@ -1,5 +1,8 @@
 import { Build } from '@fmfe/genesis-compiler';
 import { ssr } from './genesis';
+import { CommonPlugin } from '../common-plugin';
+
+ssr.plugin.use(CommonPlugin);
 
 const start = () => {
     /**
