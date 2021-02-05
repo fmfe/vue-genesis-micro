@@ -1,4 +1,4 @@
-import { Plugin, WebpackHookParams } from '@fmfe/genesis-core';
+import { Plugin, WebpackHookParams, RenderContext } from '@fmfe/genesis-core';
 import { DynamicImportCdnPlugin } from 'webpack-dynamic-import-cdn-plugin';
 
 export class CommonPlugin extends Plugin {
@@ -19,5 +19,12 @@ export class CommonPlugin extends Plugin {
                 }
             })
         );
+    }
+    public renderCompleted(context: RenderContext) {
+        const re = `^${this.ssr.publicPath}http`;
+        context.data.script = context.data.script.replace(re, 'http');
+        context.data.resource.forEach((item) => {
+            item.file = item.file.replace(re, 'http');
+        });
     }
 }
