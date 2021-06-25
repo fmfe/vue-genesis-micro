@@ -1,10 +1,9 @@
-import { Router } from '@fmfe/genesis-app';
+import { Router } from '@fmfe/genesis-app/src/index';
 import Container from './container.vue';
 
 export const createRouter = () => {
     return new Router({
         mode: 'history',
-        base: '/test/',
         routes: [
             {
                 path: '/',

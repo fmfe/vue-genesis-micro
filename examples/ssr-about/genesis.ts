@@ -22,7 +22,8 @@ export const ssr = new SSR({
         /**
          * 设置项目的目录
          */
-        baseDir: path.resolve(__dirname)
+        baseDir: path.resolve(__dirname),
+        transpile: [/@fmfe/]
     }
 });
 

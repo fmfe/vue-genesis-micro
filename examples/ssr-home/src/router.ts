@@ -1,5 +1,5 @@
 import { RouterMode } from 'vue-router';
-import { Router } from '@fmfe/genesis-app';
+import { Router } from '@fmfe/genesis-app/src/index';
 
 interface State {
     routerMode?: RouterMode;
@@ -8,7 +8,6 @@ interface State {
 export const createRouter = (state: State) => {
     return new Router({
         mode: state?.routerMode || 'history',
-        base: '/test/',
         routes: [
             {
                 path: '/',

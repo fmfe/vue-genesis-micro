@@ -21,10 +21,10 @@
         "express": "^4.17.1",
         "http-proxy": "^1.18.0",
         "ts-node": "^8.10.2",
-        "vue-router": "^3.3.2"
+        "vue-router": "^3.5.2"
     },
     "devDependencies": {
-        "@fmfe/genesis-app": "1.0.3",
+        "@fmfe/genesis-app/src/index": "1.0.3",
         "@fmfe/genesis-compiler": "1.0.3",
         "@fmfe/genesis-lint": "1.0.3",
         "@fmfe/genesis-remote": "1.0.3"
