@@ -24,7 +24,7 @@
         "vue-router": "^3.5.2"
     },
     "devDependencies": {
-        "@fmfe/genesis-app/src/index": "1.0.3",
+        "@fmfe/genesis-app": "1.0.3",
         "@fmfe/genesis-compiler": "1.0.3",
         "@fmfe/genesis-lint": "1.0.3",
         "@fmfe/genesis-remote": "1.0.3"

@@ -1,5 +1,12 @@
 <template>
     <div class="app">
+        <header class="header">
+            {{ $route.fullPath }}
+            <button @click="$router.back()">Back</button>
+            <button @click="$router.forward()">Borward</button>
+            {{ isLogin ? '已登录' : '未登录' }}
+            <button @click="isLogin = !isLogin">切换登录状态</button>
+        </header>
         <div class="left">
             <h2 class="title">ssr-common</h2>
             <ul class="list">
@@ -24,7 +31,8 @@ export default Vue.extend({
     data() {
         return {
             installed: false,
-            show: true
+            show: true,
+            isLogin: false
         };
     },
     mounted() {
@@ -60,6 +68,11 @@ body {
     height: 100%;
     margin: 0 auto;
     padding: 20px 20px 20px 220px;
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 .left {
     position: absolute;

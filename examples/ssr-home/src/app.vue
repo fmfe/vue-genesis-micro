@@ -1,12 +1,13 @@
 <template>
     <div class="app">
+        {{ $route.fullPath }}
         <ul>
             <li>
                 <router-link to="/">首页</router-link>
                 <router-link to="/?tab=new">最新</router-link>
             </li>
         </ul>
-        <router-view></router-view>
+        <router-view />
     </div>
 </template>
 <script lang="ts">
