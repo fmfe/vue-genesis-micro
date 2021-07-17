@@ -1,4 +1,4 @@
-import { Router } from '@fmfe/genesis-app/src/index';
+import { Router } from '@fmfe/genesis-app';
 import Container from './container.vue';
 
 export const createRouter = () => {

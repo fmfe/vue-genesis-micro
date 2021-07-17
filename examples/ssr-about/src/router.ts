@@ -1,5 +1,5 @@
 import { RouterMode } from 'vue-router';
-import { Router } from '@fmfe/genesis-app/src/index';
+import { Router } from '@fmfe/genesis-app';
 
 interface State {
     routerMode?: RouterMode;

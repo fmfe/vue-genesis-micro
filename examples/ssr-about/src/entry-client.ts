@@ -1,5 +1,5 @@
 import { ClientOptions } from '@fmfe/genesis-core';
-import { createClientApp } from '@fmfe/genesis-app/src/index';
+import { createClientApp } from '@fmfe/genesis-app';
 import { createRouter } from './router';
 import Vue from 'vue';
 import App from './app.vue';

@@ -1,5 +1,5 @@
 import { RenderContext } from '@fmfe/genesis-core';
-import { createServerApp } from '@fmfe/genesis-app/src/index';
+import { createServerApp } from '@fmfe/genesis-app';
 import { createRouter } from './router';
 import Vue from 'vue';
 import App from './app.vue';
